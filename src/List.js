@@ -1,6 +1,6 @@
-function List({ items, handleDelete }) {
+function List({ items }) {
   if (!items.length) {
-    return <h2>To-do list empty, go out and play!</h2>
+    return <h2>To-do list empty!</h2>
   }
   return (
     <>
@@ -8,22 +8,16 @@ function List({ items, handleDelete }) {
       <table border="1">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Due date</th>
-            <th>Options</th>
+            <th>Todo</th>
           </tr>
         </thead>
-        {items.map(item => (
-          <tr>
-            <td>{item.title}</td>
-            <td>{item.category}</td>
-            <td>{item.date}</td>
-            <td>
-              <button onClick={() => handleDelete(item)}>Delete</button>
-            </td>
-          </tr>
-        ))}
+        <tbody>
+          {items.map((item, i) => (
+            <tr key={i}>
+              <td data-cy={"todo-"+i}>{item.todo}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </>
   );

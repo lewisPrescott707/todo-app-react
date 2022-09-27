@@ -1,10 +1,8 @@
 import { useState } from 'react';
 
-function Add({ handleAdd, handleCancel }) {
+function Add({ handleAdd }) {
   const [data, setData] = useState({
-    title: '',
-    category: '',
-    date: '',
+    todo: ''
   });
   const onChange = (evt) => {
     const key = evt.target.name;
@@ -21,20 +19,11 @@ function Add({ handleAdd, handleCancel }) {
       style={{display: 'flex', flexDirection: 'column'}}
     >
       <label>
-         Title:
-         <input value={data.title} name="title" onChange={onChange} />
-      </label>
-      <label>
-        Category:
-        <input value={data.category} name="category" onChange={onChange} />
-      </label>
-      <label>
-        Due date:
-        <input type="date" value={data.date} name="date" onChange={onChange} />
+         Todo:
+         <input value={data.todo} name="todo" onChange={onChange} data-cy="todo" />
       </label>
       <div>
-        <button>Submit</button>
-        <button type="button" onClick={handleCancel}>Cancel</button>
+        <button data-cy="Add">Add</button>
       </div>
     </form>
   );
