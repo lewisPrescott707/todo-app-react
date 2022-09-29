@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Add({ handleAdd }) {
+function Add() {
   const [data, setData] = useState({
     todo: ''
   });
@@ -9,22 +9,12 @@ function Add({ handleAdd }) {
     const value = evt.target.value;
     setData(oldData => ({ ...oldData, [key]: value }));
   };
-  const onSubmit = (evt) => {
-    handleAdd(data);
-    evt.preventDefault();
-  };
   return (
-    <form
-      onSubmit={onSubmit}
-      style={{display: 'flex', flexDirection: 'column'}}
-    >
+    <form>
       <label>
          Todo:
-         <input value={data.todo} name="todo" onChange={onChange} data-cy="todo" />
+         <input value={data.todo} name="todo" onChange={onChange} data-testid="todo-input" />
       </label>
-      <div>
-        <button data-cy="Add">Add</button>
-      </div>
     </form>
   );
 }

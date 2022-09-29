@@ -14,7 +14,7 @@ function List({ items }) {
         <tbody>
           {items.map((item, i) => (
             <tr key={i}>
-              <td data-cy={"todo-"+i}>{item.todo}</td>
+              <td data-testid={"todo-"+i}>{item.todo}</td>
             </tr>
           ))}
         </tbody>

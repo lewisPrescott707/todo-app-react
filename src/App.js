@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Add handleAdd={handleAdd} />
+      <Add />
       <List items={items} />
     </>
   );
