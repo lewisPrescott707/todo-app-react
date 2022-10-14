@@ -6,6 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "ci:test": "cross-env CI=true react-scripts test --coverage",
+    "ci:cy:run": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
@@ -31,9 +33,12 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "@applitools/eyes-cypress": "^3.27.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "cypress": "^10.9.0"
+    "cross-env": "^7.0.3",
+    "cypress": "^10.9.0",
+    "start-server-and-test": "^1.14.0"
   }
 }

@@ -1,22 +1,20 @@
 import { useState } from 'react';
 
-function Add() {
-  const [data, setData] = useState({
-    todo: ''
-  });
-  const onChange = (evt) => {
+export default function Add() {
+    const [data, setData] = useState({
+        todo: ''
+    });
+    const onChange = (evt) => {
     const key = evt.target.name;
     const value = evt.target.value;
     setData(oldData => ({ ...oldData, [key]: value }));
-  };
-  return (
+    };
+    return (
     <form>
-      <label>
-         Todo:
-         <input value={data.todo} name="todo" onChange={onChange} data-testid="todo-input" />
-      </label>
+        <label>
+            Todo:
+            <input value={data.todo} name="todo" onChange={onChange} data-testid="todo-input" />
+        </label>
     </form>
-  );
-}
-
-export default Add;
+    );
+ }
