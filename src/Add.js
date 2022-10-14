@@ -15,6 +15,7 @@ export default function Add() {
             Todo:
             <input value={data.todo} name="todo" onChange={onChange} data-testid="todo-input" />
         </label>
+            <button type="submit">Add Todo</button>
     </form>
     );
  }
